@@ -11,8 +11,8 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot using Lan
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/rag-chatbot.git
-   cd rag-chatbot
+   git clone https://github.com/ramanzah/langchain-rag-tutorial.git
+   cd langchain-rag-tutorial
    ```
 
 2. Create a virtual environment (optional but recommended):
