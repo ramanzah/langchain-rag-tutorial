@@ -30,6 +30,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot using Lan
    ```
    OPENAI_API_KEY=your_api_key_here
    ```
+   You can get your API key from https://platform.openai.com/api-keys. If you don't have an account, create one and load a few dollars in API tokens to set up your API key.
 
 ## Usage
 
