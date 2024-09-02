@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, AIMessage
 
 # Load environment variables
 load_dotenv()
@@ -27,9 +27,10 @@ def chat_loop(llm):
         # Send the query to the language model
         result = llm.invoke(messages)  # Pass the list of messages
         print(f"AI: {result.content}")  # Access the content of the AIMessage
+        
         # Append the conversation to the chat history
         chat_history.append(HumanMessage(content=query))
-        chat_history.append(SystemMessage(content=result.content))
+        chat_history.append(AIMessage(content=result.content))
 
 def main():
     # Initialize the language model

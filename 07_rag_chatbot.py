@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_chroma import Chroma
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -94,7 +94,7 @@ def chat_loop(rag_chain):
         result = rag_chain.invoke({"input": query, "chat_history": chat_history})
         print(f"AI: {result['answer']}")
         chat_history.append(HumanMessage(content=query))
-        chat_history.append(SystemMessage(content=result["answer"]))
+        chat_history.append(AIMessage(content=result["answer"]))
 
 def main():
     # Initialize components
